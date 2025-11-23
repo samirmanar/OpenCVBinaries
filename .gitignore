@@ -1,0 +1,9 @@
+/binaries/
+
+/build/
+
+/opencv/
+
+/.vscode/
+
+CMakeUserPresets.json
