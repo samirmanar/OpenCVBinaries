@@ -1,13 +1,23 @@
 #include <iostream>
+#include <filesystem>
 
 #include <opencv2/opencv.hpp>
 
 int main(int argc, char* argv[])
 {
+    if (argc < 2) {
+        std::cout << "Usage:\n\n";
+        std::cout << "  demo.exe <input file>\n\n";
+        std::cout << "Load an image and show the original, the edges and the contours.\n";
+        return 1;
+    }
+
+    std::filesystem::path inputFile(argv[1]);
+
     // Load image
-    cv::Mat img = cv::imread("images/lena.jpg");
+    cv::Mat img = cv::imread(inputFile.string());
     if (img.empty()) {
-        std::cerr << "Error: Could not load lena.jpg\n";
+        std::cerr << "Error: Could not load " << inputFile.string() << "\n";
         return -1;
     }
     
