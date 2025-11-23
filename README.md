@@ -1,4 +1,4 @@
-# OpenVB Binaries
+# OpenCV Binaries
 
 ## How to build the demo project
 
